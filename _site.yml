@@ -4,6 +4,7 @@ description: |
   My Blog
 output_dir: "docs"
 navbar:
+  logo: images/mylogo.png
   right:
     - text: "Home"
       href: index.html
