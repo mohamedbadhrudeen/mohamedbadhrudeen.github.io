@@ -1,7 +1,7 @@
 ---
-title: "About this blog"
+title: "Who am I?"
 description: |
-  Some additional details about the blog
+  My name is Mohamed Badhrudeen. I am a PhD student doing research in Smart Cities, specifically focusing on urban intelligence. Urban intelligence is a process of leveraging data intelligently to recommend an action towards solving some of the urban challenges. Apart from my research I like to dabble in other projects in order to develop my problem solving skills. I will be posting some of my side projects here.     
 ---
 
 ```{r setup, include=FALSE}
