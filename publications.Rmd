@@ -1,0 +1,52 @@
+---
+title: "Publications"
+description: |
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warnings=FALSE)
+```
+
+## Journal
+
+**Badhrudeen M**, Derrible S, and Mora M. “Urban Intelligence: A conceptual model for decision support in smart city development.” *In Preparation*.
+
+**Badhrudeen M**, and Derrible S. “Knowledge graph extraction from the smart cities literature in the context of urban infrastructure.” *In Preparation*.
+
+**Badhrudeen M**, Derrible S, Verma T, Kermanshah A, and Furno A. [“A Geometric classification of World Urban Road Networks.”](https://www.mdpi.com/2413-8851/6/1/11) *Urban Science*, 2022, 6(1), 11.
+
+**Badhrudeen M**, Boria E, Fonteix G, Derrible S, and Siciliano M. “A framework to convert infrastructure data from Computer Aided Drawing (CAD) to Geographic Information Systems (GIS): C2G Framework.” *Under Review*, Informatics, 2022. 
+
+Boria E, **Badhrudeen M**, Fonteix G, Derrible S, and Siciliano M. “A protocol to convert infrastructure data from Computer Aided Drawing (CAD) to Geographic Information Systems (GIS).”  [https://www.arxiv.com/abs/2006.14112](https://www.arxiv.com/abs/2006.14112).
+
+Balasubramani BS, **Badhrudeen M**, Derrible S, and Cruz I. “Smart data management of urban infrastructure using Geographic Information Systems.” *Journal of Infrastructure Systems*, 2020, 26(4).  
+
+**Badhrudeen M**, Vanajakshi LD, Subramanian SC, Sharma A, Thomas H. “Recurrence Theory – Based Platoon Analysis under Indian Traffic Conditions.” *Journal of Transportation Engineering, Part A: Systems*, 144(8), 2018.
+
+**Badhrudeen M**, Raj J, Vanajakshi L.D. “Short Term Prediction of Traffic Parameters -- Performance Comparison of Data Driven and Less Data Required Approaches.” *Journal of Advanced Transportation*, 50(4), 2016, pp. 647-666.
+
+## Conference Papers
+
+**Badhrudeen M**, Naranjo N, Movahedi A, and Derrible S. “Machine learning based tool for identifying errors in CAD to GIS converted data.” In: Ha-Minh C., Dao D., Benboudjema F., Derrible S., Huynh D., Tang A. (eds) CIGOS 2019, Innovation for Sustainable Infrastructure. *Lecture Notes in Civil Engineering*, Vol 54. Springer, Singapore.
+
+**Badhrudeen M**, Thomas H, Vanajakshi LD, Sharma A. “Platoon Dispersion Analysis based on Diffusion theory.” 6th International Conference on Transportation and Traffic Engineering (ICTTE),124, 01003, 2017.
+
+**Badhrudeen M**, Ramesh V, Vanajakshi LD. “Headway Analysis using Automated Sensor Data under Indian Traffic Conditions.” 11th Transportation Planning and Implementation Methodologies for Developing Countries, Transportation Research Procedia, 2016, 17, pp. 331- 339.
+
+## Poster Presentations
+
+**Badhrudeen M**, Derrible S, Verma T, Kermanshah A, and Furno A. “A Geometric classification of World Urban Road Networks.” *Christpher B. and Susan S. Burke Civil Engineering Graduate Student Poster Competition*, University of Illinois at Chicago, April 19, 2019.
+
+**Badhrudeen M**, Boria E, Fonteix G, Derrible S, and Siciliano M. “A framework to convert infrastructure data from Computer Aided Drawing (CAD) to Geographic Information Systems (GIS): C2G Framework.” *GISDay, Urban Data Visualization lab, College of Urban Planning and Public Affairs, UIC,* 2018. 
+
+**Badhrudeen M**, Raj J, Vanajakshi L.D. Short Term Prediction of Traffic Parameters – Performance Comparison of Data Driven and Less Data Required Approaches. Transportation Research Board 93rd Annual Meeting, Washington DC, USA, January 12 – 16, 2014.
+
+Kalaanidhi S, Gunasekaran K, **Badhrudeen M**, Velmurugan S. Review of Data Collection Methods for Establishing the Capacity of Intercity Highway. 11th Transportation Planning and Implementation Methodologies for Developing Countries, IIT Bombay, Mumbai, India, December 10 – 12, 2014.
+
+## Technical Reports
+
+“Development and Evaluation of Traffic Sensors under Indian Traffic Conditions”, *Center of Excellence in Urban Transport, Indian Institute of Technology Madras*, Sponsored by Ministry of Urban Development, Government of India, 2016. Available [here](https://coeut.iitm.ac.in/Sensor_Evaluation%20Report.pdf).
+
