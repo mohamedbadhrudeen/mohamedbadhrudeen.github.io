@@ -87,26 +87,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>Learning Curve: My Blog</title>
+  <title>Learning Curve: Publications</title>
 
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Learning Curve: My Blog"/>
+  <meta property="og:title" content="Learning Curve: Publications"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Learning Curve"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Learning Curve: My Blog"/>
+  <meta property="twitter:title" content="Learning Curve: Publications"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site","listing"]}},"value":[{"type":"character","attributes":{},"value":["My Blog"]},{"type":"character","attributes":{},"value":["distill::distill_website"]},{"type":"character","attributes":{},"value":["posts"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","output"]}},"value":[{"type":"character","attributes":{},"value":["Publications"]},{"type":"NULL"},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2377,12 +2377,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 </head>
 
-<body class="layout-listing">
+<body>
 
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"My Blog","authors":[]}
+{"title":"Publications","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2408,185 +2408,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
-<!--radix_placeholder_article_listing-->
-
-
-<script type="application/javascript">
-
-function init_posts_list() {
-
-  function load_image(img) {
-    var src = $(img).attr('data-src');
-    if (src) {
-      $(img).attr('src', src);
-      $(img).on("load", function() {
-        img.removeAttribute('data-src');
-      });
-    }
-  }
-
-  function set_posts_visible(posts, visible) {
-    if (visible) {
-
-      // show bottom border by default
-      $(posts).removeClass('post-preview-last');
-
-      // apply limits if need be
-      var max_posts = 25;
-      var apply_limits = $('.posts-container').hasClass('posts-apply-limit');
-      if (apply_limits && posts.length > max_posts) {
-        posts = $(posts).slice(0, max_posts);
-      } else {
-        $('.posts-more a').addClass('hidden');
-      }
-
-      // apply last style
-      $(posts.slice(-1)[0]).addClass('post-preview-last');
-
-      $(posts).removeClass('hidden');
-      $(posts).find('img[data-src]').each(function(i, img) {
-        load_image(img);
-      });
-    } else {
-      $(posts).addClass('hidden');
-    }
-  }
-
-  function apply_hash_filter() {
-
-    // clear active state
-    $('.categories .active').removeClass('active');
-
-    // mark all posts invisible to start
-    set_posts_visible($('.posts-list').children('a'), false);
-
-    // if we have a hash filter
-    if (window.location.hash && window.location.hash.startsWith("#category:")) {
-
-      // mark posts that match the category visible
-      var page_category = window.location.hash.replace(/^#category:/, "");
-      page_category = decodeURIComponent(page_category)
-      var posts = $('.post-metadata').map(function(idx, script) {
-        var metadata = $.parseJSON($(script).html());
-        var post = null;
-        $.each(metadata.categories, function(idx, category) {
-          category = category.replace(/ /g,"_");
-          if ((page_category || '').toLowerCase() === "articles" || category === page_category) {
-            post = $(script).parent().get();
-            return false;
-          }
-        });
-        return post;
-      });
-      set_posts_visible(posts, true);
-
-      // mark the hash active
-      $('.categories li>a[href="' + decodeURIComponent(window.location.hash) + '"]').addClass('active');
-
-      // update the list_caption
-      var list_caption = $('.posts-list-caption');
-      var caption = (page_category || '').toLowerCase() === "articles"
-        ? list_caption.attr('data-caption')
-        : ('Category: ' + page_category.replace(/_/g," "));
-      list_caption.text(caption);
-
-    } else {
-
-      // no hash filter, make all posts visible (subject to max display)
-      set_posts_visible($('.posts-list').children(), true);
-
-      // reset list caption
-      var list_caption = $('.posts-list-caption');
-      list_caption.text(list_caption.attr('data-caption'));
-
-
-    }
-  }
-
-  // more articles
-  function apply_post_limits(apply) {
-    if (apply) {
-      $('.posts-container').addClass('posts-apply-limit');
-      $('.posts-more a').removeClass('hidden');
-    } else {
-      $('.posts-container').removeClass('posts-apply-limit');
-      $('.posts-more a').addClass('hidden');
-    }
-  }
-
-  // click handling for tags
-  $('.dt-tag').click(function(ev) {
-    window.location.hash = '#category:' + $(this).text().replace(/ /g, "_");
-    return false;
-  })
-
-  // hash filter handling
-  apply_hash_filter();
-  $(window).on('hashchange',function() {
-    apply_post_limits(true);
-    apply_hash_filter();
-  });
-
-  // more articles link
-  $('.posts-more a').click(function(e) {
-    e.preventDefault();
-    apply_post_limits(false);
-    apply_hash_filter();
-    return false;
-  });
-
-}
-
-</script>
-
-
-
-<div class="posts-container posts-apply-limit l-page">
-<div class="posts-list">
-<h1 class="posts-list-caption" data-caption="My Blog">My Blog</h1>
-<a href="posts/2022-04-01-freight-flow-visualization/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">April 1, 2022</div>
-<div class="dt-authors">
-<div class="dt-author">Mohamed Badhrudeen</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="posts/2022-04-01-freight-flow-visualization/freight-flow-visualization_files/figure-html5/unnamed-chunk-1-1.png"/>
-</div>
-<div class="description">
-<h2>Visualization of US Domestic Freight Transport of Different Commodities Originating From Illinois</h2>
-<div class="dt-tags"></div>
-<p>In this post, we will visualize the domestic freight transport flow of different commodities from Illinois to other US mainland states.</p>
-</div>
-</a>
-<a href="posts/welcome/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">April 9, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Mohamed Badhrudeen</div>
-</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Extracting Information from 10Q filings</h2>
-<div class="dt-tags"></div>
-<p>In this post, I explain how to extract financial information (statement of balance sheet) of **Apple Inc.** company from its third quarter 10Q filing for the year 2018.</p>
-</div>
-</a>
-</div>
-<div class="posts-more">
-<a href="#">More articles &raquo;</a>
-</div>
-</div>
-<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
-<h1>My Blog</h1>
+<h1>Publications</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2594,6 +2418,26 @@ function init_posts_list() {
 
 
 <div class="d-article">
+<h2 id="journal">Journal</h2>
+<p><strong>Badhrudeen M</strong>, Derrible S, and Mora M. “Urban Intelligence: A conceptual model for decision support in smart city development.” <em>In Preparation</em>.</p>
+<p><strong>Badhrudeen M</strong>, and Derrible S. “Knowledge graph extraction from the smart cities literature in the context of urban infrastructure.” <em>In Preparation</em>.</p>
+<p><strong>Badhrudeen M</strong>, Derrible S, Verma T, Kermanshah A, and Furno A. <a href="https://www.mdpi.com/2413-8851/6/1/11">“A Geometric classification of World Urban Road Networks.”</a> <em>Urban Science</em>, 2022, 6(1), 11.</p>
+<p><strong>Badhrudeen M</strong>, Boria E, Fonteix G, Derrible S, and Siciliano M. “A framework to convert infrastructure data from Computer Aided Drawing (CAD) to Geographic Information Systems (GIS): C2G Framework.” <em>Under Review</em>, Informatics, 2022.</p>
+<p>Boria E, <strong>Badhrudeen M</strong>, Fonteix G, Derrible S, and Siciliano M. “A protocol to convert infrastructure data from Computer Aided Drawing (CAD) to Geographic Information Systems (GIS).” <a href="https://www.arxiv.com/abs/2006.14112">https://www.arxiv.com/abs/2006.14112</a>.</p>
+<p>Balasubramani BS, <strong>Badhrudeen M</strong>, Derrible S, and Cruz I. “Smart data management of urban infrastructure using Geographic Information Systems.” <em>Journal of Infrastructure Systems</em>, 2020, 26(4).</p>
+<p><strong>Badhrudeen M</strong>, Vanajakshi LD, Subramanian SC, Sharma A, Thomas H. “Recurrence Theory – Based Platoon Analysis under Indian Traffic Conditions.” <em>Journal of Transportation Engineering, Part A: Systems</em>, 144(8), 2018.</p>
+<p><strong>Badhrudeen M</strong>, Raj J, Vanajakshi L.D. “Short Term Prediction of Traffic Parameters – Performance Comparison of Data Driven and Less Data Required Approaches.” <em>Journal of Advanced Transportation</em>, 50(4), 2016, pp. 647-666.</p>
+<h2 id="conference-papers">Conference Papers</h2>
+<p><strong>Badhrudeen M</strong>, Naranjo N, Movahedi A, and Derrible S. “Machine learning based tool for identifying errors in CAD to GIS converted data.” In: Ha-Minh C., Dao D., Benboudjema F., Derrible S., Huynh D., Tang A. (eds) CIGOS 2019, Innovation for Sustainable Infrastructure. <em>Lecture Notes in Civil Engineering</em>, Vol 54. Springer, Singapore.</p>
+<p><strong>Badhrudeen M</strong>, Thomas H, Vanajakshi LD, Sharma A. “Platoon Dispersion Analysis based on Diffusion theory.” 6th International Conference on Transportation and Traffic Engineering (ICTTE),124, 01003, 2017.</p>
+<p><strong>Badhrudeen M</strong>, Ramesh V, Vanajakshi LD. “Headway Analysis using Automated Sensor Data under Indian Traffic Conditions.” 11th Transportation Planning and Implementation Methodologies for Developing Countries, Transportation Research Procedia, 2016, 17, pp. 331- 339.</p>
+<h2 id="poster-presentations">Poster Presentations</h2>
+<p><strong>Badhrudeen M</strong>, Derrible S, Verma T, Kermanshah A, and Furno A. “A Geometric classification of World Urban Road Networks.” <em>Christpher B. and Susan S. Burke Civil Engineering Graduate Student Poster Competition</em>, University of Illinois at Chicago, April 19, 2019.</p>
+<p><strong>Badhrudeen M</strong>, Boria E, Fonteix G, Derrible S, and Siciliano M. “A framework to convert infrastructure data from Computer Aided Drawing (CAD) to Geographic Information Systems (GIS): C2G Framework.” <em>GISDay, Urban Data Visualization lab, College of Urban Planning and Public Affairs, UIC,</em> 2018.</p>
+<p><strong>Badhrudeen M</strong>, Raj J, Vanajakshi L.D. Short Term Prediction of Traffic Parameters – Performance Comparison of Data Driven and Less Data Required Approaches. Transportation Research Board 93rd Annual Meeting, Washington DC, USA, January 12 – 16, 2014.</p>
+<p>Kalaanidhi S, Gunasekaran K, <strong>Badhrudeen M</strong>, Velmurugan S. Review of Data Collection Methods for Establishing the Capacity of Intercity Highway. 11th Transportation Planning and Implementation Methodologies for Developing Countries, IIT Bombay, Mumbai, India, December 10 – 12, 2014.</p>
+<h2 id="technical-reports">Technical Reports</h2>
+<p>“Development and Evaluation of Traffic Sensors under Indian Traffic Conditions”, <em>Center of Excellence in Urban Transport, Indian Institute of Technology Madras</em>, Sponsored by Ministry of Urban Development, Government of India, 2016. Available <a href="https://coeut.iitm.ac.in/Sensor_Evaluation%20Report.pdf">here</a>.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
