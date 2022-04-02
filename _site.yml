@@ -1,8 +1,9 @@
 name: "mohamedbadhrudeen.github.io"
-title: "Mohamed Badhrudeen"
+title: "Learning Curve"
 description: |
   My Blog
 output_dir: "docs"
+theme: style.css
 navbar:
   logo: images/mylogo.png
   right:
@@ -12,5 +13,7 @@ navbar:
       href: about.html
     - text: "Publications"
       href: publications.html
+    - text: "CV"
+      href: CV.pdf
       
 output: distill::distill_article
