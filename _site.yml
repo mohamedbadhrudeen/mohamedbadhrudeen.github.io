@@ -1,7 +1,7 @@
 name: "mohamedbadhrudeen.github.io"
-title: "Learning Curve"
+title: "Mohamed Badhrudeen"
 description: |
-  My Blog
+  Learning Curve
 output_dir: "docs"
 theme: style.css
 navbar:
