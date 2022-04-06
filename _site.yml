@@ -4,6 +4,7 @@ description: |
   Learning Curve
 output_dir: "docs"
 theme: style.css
+repository_url: https://github.com/mohamedbadhrudeen/mohamedbadhrudeen.github.io
 navbar:
   logo: images/mylogo.png
   right:
