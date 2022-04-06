@@ -15,5 +15,8 @@ navbar:
       href: publications.html
     - text: "CV"
       href: CV.pdf
+    - icon: fab fa-github
+      href: https://github.com/mohamedbadhrudeen
       
 output: distill::distill_article
+

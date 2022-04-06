@@ -9,7 +9,7 @@ date: 2022-04-01
 output:
   distill::distill_article:
     self_contained: false
-    css: "style.css"
+    style: style.css
     toc: true
 ---
 
@@ -77,7 +77,7 @@ Now, it is time to plot some maps. So, we first need to download US states map. 
 data_2 <- fread('data.csv')
 ```
 
-```{r layout = "l-screen-inset", echo = TRUE, message=FALSE}
+```{r layout = "l-screen-inset", echo = TRUE, message=FALSE, results=FALSE}
 data_2 <- data_2[trade_type == 1 & orig_state == 'Illinois']
 state_ <- st_read("shapefiles/cb_2018_us_state_500k.shp")
 
@@ -96,9 +96,8 @@ state_new <- state_albers[(state_$NAME) %in% state_origin_,]
 Now, we have the shapefile with all information we need, we will need to extract the inforamtion from the freight estimates. *sctg2* is the column that contains the commodities type, and as mentioned earlier, *trade_type* is 1 for the domestic trips.
 
 
-```{r layout = "l-screen-inset", warnings = FALSE, echo = TRUE}
+```{r layout = "l-screen-inset", warnings = FALSE, echo = TRUE, class.output="scroll-100"}
 #all domestic trips from Illinois to other states
-
 illinois_ <- data_2 %>% 
   group_by(orig_state, dest_state) %>% 
   summarise(avg_freight = mean(tons_2025),trips = n(), region = as.factor(mean(dest_region)))
@@ -114,6 +113,7 @@ edges_ <- illinois_ %>%
 #Deleting teh Illinois to Illinois trips
 
 edges_1 <- filter(edges_, orig_state == "Illinois" & !dest_state %in% c('Hawaii', 'Alaska', "Illinois"))
+
 ```
 
 We have all the data to plot the commodities flow from Illinois to other states. Let's plot the map.
