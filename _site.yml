@@ -1,7 +1,7 @@
 name: "mohamedbadhrudeen.github.io"
-title: "Mohamed Badhrudeen"
+title: "Learning Curve"
 description: |
-  Learning Curve
+  My personal blog.
 output_dir: "docs"
 theme: style.css
 repository_url: https://github.com/mohamedbadhrudeen/mohamedbadhrudeen.github.io
