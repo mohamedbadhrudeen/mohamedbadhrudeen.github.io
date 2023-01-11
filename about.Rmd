@@ -1,7 +1,7 @@
 ---
 title: "Who am I?"
 description: |
-  I graduated with a PhD in Civil Engineering with a focus on smart cities from University of Illinois at Chicago, I was advised by Dr. Sybil Derrible, Director of the Complex and Sustainable Urban Networks Laboratory at UIC. My PhD research was on urban intelligence, which is a machine learning based decision support framework to help policymakers in developing sustainable policies. My research interests are sustainable transportation, Natural Language Processing, Cuasal Inference, Machine Learning. Apart from my research, I also like to dabble in other projects in order to develop my machine learning and problem solving skills. This blog will a home to some of my opinions and side projects.     
+  I graduated with a PhD in Civil Engineering with a focus on smart cities from University of Illinois at Chicago, I was advised by Dr. Sybil Derrible, Director of the Complex and Sustainable Urban Networks Laboratory at UIC. My PhD research was on urban intelligence, which is a machine learning based decision support framework to help policymakers in developing sustainable policies. My cuurent research  focuses on studying the network level impacts of Electric Vehicles (EV) on the roadway capacity. Additionally, I employ machine leraning techniques to study transportation related problems. Apart from my research, I also like to dabble in projects in order to develop my machine learning and problem solving skills. This blog will host some of my projects.     
 ---
 
 ```{r setup, include=FALSE}
