@@ -18,7 +18,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 library(pacman)
 p_load('data.table', 'tidyverse', 'tmap', 'sf', 'stringr',
-       'igraph', 'sfnetworks', 'units', 'tidygraph', 'trend', 'DT')
+       'units', 'tidygraph', 'trend', 'DT')
 ```
 
 # Background
