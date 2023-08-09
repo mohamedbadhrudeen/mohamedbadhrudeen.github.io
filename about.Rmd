@@ -3,7 +3,7 @@ title: "Who am I?"
 description: |
   I am a postdoc doing research in Electric Vehicles (EVs). Particularly, I am interested in understanding the effects of EVs on travel behavior, traffic safety, road capacity, energy consumption, etc. I rely on statistical techniques, machine learning algorithms, and simulation to model and study the EVs' effects. 
   
-  I have a PhD in Civil Engineering with a focus on smart cities from University of Illinois at Chicago. I was advised by Dr. Sybil Derrible, Director of the Complex and Sustainable Urban Networks Laboratory at UIC. During my PhD, I developed a machine learning based decision support framework called **urban intelligence** to help policymakers in developing smart sustainable policies. Apart from my research, I like to learn new techniques. This blog will be a home for some of my analyses and projects.     
+  I have a PhD in Civil Engineering with a focus on smart cities from University of Illinois Chicago. I was advised by Dr. Sybil Derrible, Director of the Complex and Sustainable Urban Networks Laboratory at UIC. During my PhD, I developed a machine learning based decision support framework called **urban intelligence** to help policymakers in developing smart sustainable policies. Apart from my research, I like to learn new techniques. This blog will be a home for some of my analyses and projects.     
 ---
 
 ```{r setup, include=FALSE}
